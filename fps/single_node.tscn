@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxqgxxo52wlua"]
+
+[ext_resource type="Script" uid="uid://dakpdv7flrsj" path="res://single_node.gd" id="1_rv84u"]
+[ext_resource type="Texture2D" uid="uid://dgc076hvwarhl" path="res://assets/qwantani_dusk_2_1k.hdr" id="2_1em8h"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v8a63"]
+panorama = ExtResource("2_1em8h")
+
+[sub_resource type="Sky" id="Sky_rv84u"]
+sky_material = SubResource("PanoramaSkyMaterial_v8a63")
+
+[sub_resource type="Environment" id="Environment_1em8h"]
+background_mode = 2
+sky = SubResource("Sky_rv84u")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_882c7"]
+
+[node name="SingleNode" type="Node3D"]
+script = ExtResource("1_rv84u")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1em8h")
+
+[node name="camera_holder" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="camera_holder"]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="camera_holder"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2.310755)
+mesh = SubResource("CylinderMesh_882c7")

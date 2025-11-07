@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4svt4ibodeuj"]
+
+[ext_resource type="Script" uid="uid://ci18o5k6vf4af" path="res://camera_holder.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dgc076hvwarhl" path="res://assets/qwantani_dusk_2_1k.hdr" id="1_ig7tw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0xm2m"]
+panorama = ExtResource("1_ig7tw")
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("PanoramaSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_color = Color(0.827451, 0.34117648, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
+material = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0xm2m")
+
+[node name="camera_holder" type="Node3D" parent="."]
+
+[node name="rotation_x" type="Node3D" parent="camera_holder"]
+
+[node name="Camera3D" type="Camera3D" parent="camera_holder/rotation_x"]
+fov = 89.81914
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")
+
+[node name="target" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0484567)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="target"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.327791)
+mesh = SubResource("SphereMesh_h2yge")

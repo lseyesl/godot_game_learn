@@ -1,0 +1,8 @@
+config_version=5
+
+[application]
+
+config/name="fp3"
+run/main_scene="uid://n88plw668hjj"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
