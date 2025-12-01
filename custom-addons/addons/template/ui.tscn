@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8x6x4x4x4x4"]
+
+[ext_resource type="Script" path="res://addons/template/ui.gd" id="1_u1u1u"]
+
+[node name="TemplateGenerator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1u1u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Select Template:"
+
+[node name="TemplateList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "New Scene Name:"
+
+[node name="SceneName" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "MyNewScene"
+
+[node name="CreateButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Create Scene"
+
+[connection signal="pressed" from="VBoxContainer/CreateButton" to="." method="_on_create_pressed"]
