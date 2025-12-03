@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjgijakiayae8"]
+
+[ext_resource type="Texture2D" uid="uid://dm0foxf1533ma" path="res://icon.svg" id="1_4dprn"]
+
+[node name="TestAddons" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(88, 75)
+texture = ExtResource("1_4dprn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(307, 241)
+texture = ExtResource("1_4dprn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(307, 446)
+texture = ExtResource("1_4dprn")

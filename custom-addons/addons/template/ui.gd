@@ -53,6 +53,7 @@ func _on_create_pressed() -> void:
 		
 	var err = DirAccess.copy_absolute(source_path, target_path)
 	if err == OK:
+		Toast.show_toast("success")
 		print("Scene created successfully: ", target_path)
 		push_warning("Scene created successfully: ", target_path)
 		EditorInterface.open_scene_from_path(target_path)

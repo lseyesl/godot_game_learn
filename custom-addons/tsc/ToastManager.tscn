@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxdvnoqsippt"]
+
+[ext_resource type="Script" uid="uid://b6x3wtkkn4eiv" path="res://tsc/toast_manager.gd" id="1_aoq1w"]
+
+[node name="ToastManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_aoq1w")
+
+[node name="Label" type="Label" parent="."]
+z_index = 99
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(1, 0.3506509, 0.6167853, 1)
+theme_override_font_sizes/font_size = 30
