@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwtlhmuxon25l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pp5pg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfsf2"]
+
+[node name="Lib" type="Node3D"]
+
+[node name="up" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pp5pg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="up"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="up/StaticBody3D"]
+shape = SubResource("BoxShape3D_dfsf2")
+
+[node name="down" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33151138, 0, 0, 0, 0.27615058, 0, 0, 0, 1, 1.6887474, 0, 0)
+mesh = SubResource("BoxMesh_pp5pg")
+skeleton = NodePath("../up")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="down"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="down/StaticBody3D"]
+shape = SubResource("BoxShape3D_dfsf2")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxo10gbpcv1de"]
+
+[ext_resource type="Script" uid="uid://cko7hit1x4e1g" path="res://3d_procedural/mesh_instance_3d.gd" id="1_fndg6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8i3yv"]
+size = Vector2(100, 100)
+subdivide_width = 100
+subdivide_depth = 100
+
+[node name="Map" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_8i3yv")
+script = ExtResource("1_fndg6")
